@@ -9,11 +9,17 @@
     "dev": "webpack serve --mode development --env development --port=8880"
   },
   "devDependencies": {
+    "@types/react": "^17.0.16",
+    "@types/react-dom": "^17.0.9",
     "awesome-typescript-loader": "^5.2.1",
     "html-webpack-plugin": "^5.3.2",
     "typescript": "^4.3.5",
     "webpack": "^5.49.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
