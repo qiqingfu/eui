@@ -1,3 +1,5 @@
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
 module.exports = {
   mode: "production",
   // https://segmentfault.com/a/1190000012113011
@@ -15,4 +17,5 @@ module.exports = {
       amd: "react-dom",
     },
   },
+  plugins: [new CleanWebpackPlugin()],
 };
