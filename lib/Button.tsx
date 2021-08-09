@@ -1,7 +1,11 @@
 import React from "react";
 
 const Button = () => {
-  return <button>按钮</button>;
+  return (
+    <>
+      <button>click</button>
+    </>
+  );
 };
 
 export default Button;
