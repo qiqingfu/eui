@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Button from "./Button";
+import Icon from "./Icon"
 
-ReactDOM.render(<Button />, document.getElementById("root"));
+ReactDOM.render(<Icon name="delete"/>, document.getElementById("root"));
