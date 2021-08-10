@@ -1,4 +1,5 @@
 import React from "react"
+import "./icons"
 
 interface IconProps {
 	name: string
@@ -6,7 +7,10 @@ interface IconProps {
 
 const Icon: React.FunctionComponent<IconProps> = (props) => {
 	return (
-		<span>{props.name}</span>
+		// https://stackoverflow.com/questions/26815738/svg-use-tag-and-reactjs
+		<svg>
+			<use xlinkHref={`#${props.name}`} />
+		</svg>
 	)
 }
 
