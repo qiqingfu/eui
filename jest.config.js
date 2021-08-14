@@ -6,14 +6,17 @@ module.exports = {
   reporters: ["default"],
   moduleFileExtensions: ["js", "jsx", "ts", "tsx"],
   moduleDirectories: ["node_modules"],
+  testEnvironment: "jsdom",
   globals: {
     "ts-jest": {
       tsConfig: "tsconfig.test.json",
     },
   },
   moduleNameMapper: {
-    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-      "<rootDir>/test/__mocks__/file-mock.js",
+    "^.+\\.(jpg|jpeg)$": "jest-static-stubs/jpg",
+    "^.+\\.gif$": "jest-static-stubs/gif",
+    "^.+\\.(eot|otf|svg|ttf|woff|woff2|mp3|m4a|aac|oga)$": "identity-obj-proxy",
+    "^.+\\.(css|scss)$": "identity-obj-proxy",
   },
   testMatch: ["<rootDir>/**/__tests__/**/*.unit.(js|jsx|ts|tsx)"],
   transform: {
