@@ -8,4 +8,4 @@
  *  }
  */
 
-import "./delete.svg"
+import './delete.svg';

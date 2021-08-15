@@ -10,7 +10,8 @@
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "test": "cross-env NODE_ENV=test jest --collectCoverage=false",
     "test:coverage": "cross-env NODE_ENV=test jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prettier": "prettier -c --write **/*"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
