@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = () => {
+const Button = (): React.ReactElement => {
   return (
     <>
       <button>click</button>

@@ -13,7 +13,7 @@ const Icon: React.FunctionComponent<IconProps> = ({
   name,
   className,
   ...props
-}) => {
+}: IconProps) => {
   const { style, restProps } = useStyle(props as IconProps);
 
   return (
@@ -29,7 +29,7 @@ const Icon: React.FunctionComponent<IconProps> = ({
 };
 
 function useStyle(props: IconProps) {
-  let { style = {}, color, size, ...restProps } = props;
+  const { style = {}, color, size, ...restProps } = props;
 
   if (color) style.fill = color;
   if (size) style.fontSize = size;
