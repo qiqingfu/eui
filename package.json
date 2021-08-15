@@ -8,7 +8,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --host 0.0.0.0 --port 8088",
     "build": "cross-env NODE_ENV=production webpack --mode production",
-    "test": "jest"
+    "test": "cross-env NODE_ENV=test jest --collectCoverage=false",
+    "test:coverage": "cross-env NODE_ENV=test jest"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
