@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon Component Icon Render 1`] = `
+<svg
+  className="e-ui-icon"
+  style={Object {}}
+>
+  <use
+    xlinkHref="#delete"
+  />
+</svg>
+`;
