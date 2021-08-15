@@ -1,0 +1,5 @@
+webpack.*.js
+types/*
+test/*
+dist/**/*
+node_modules

@@ -1,7 +1,7 @@
-import React from "react";
-import classNames from "classnames";
-import "../../icons";
-import "./icon.scss";
+import React from 'react';
+import classNames from 'classnames';
+import '../../icons';
+import './icon.scss';
 
 export interface IconProps<T = SVGElement> extends React.SVGAttributes<T> {
   name: string;
@@ -9,20 +9,12 @@ export interface IconProps<T = SVGElement> extends React.SVGAttributes<T> {
   size?: number;
 }
 
-const Icon: React.FunctionComponent<IconProps> = ({
-  name,
-  className,
-  ...props
-}: IconProps) => {
+const Icon: React.FunctionComponent<IconProps> = ({ name, className, ...props }: IconProps) => {
   const { style, restProps } = useStyle(props as IconProps);
 
   return (
     // https://stackoverflow.com/questions/26815738/svg-use-tag-and-reactjs
-    <svg
-      className={classNames("e-ui-icon", className)}
-      {...restProps}
-      style={style}
-    >
+    <svg className={classNames('e-ui-icon', className)} {...restProps} style={style}>
       <use xlinkHref={`#${name}`} />
     </svg>
   );
