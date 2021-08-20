@@ -1,11 +1,7 @@
 import React from 'react';
 
 const Button = (): React.ReactElement => {
-  return (
-    <>
-      <button>click</button>
-    </>
-  );
+  return <div>Button</div>;
 };
 
 export default Button;
