@@ -6,7 +6,7 @@ module.exports = {
   },
   // 输出的格式为一个 library
   output: {
-    path: path.resolve(__dirname, 'dist/lib'),
+    path: path.resolve(__dirname, '../dist/lib'),
     library: {
       name: 'Eui',
       type: 'umd',
