@@ -1,5 +1,3 @@
-@import "../../style/var";
-
 .#{$e-prefix}-btn {
   display: inline-block;
   background-color: $primay;
@@ -9,7 +7,7 @@
   font-size: 14px;
   cursor: pointer;
   border-radius: 4px;
-  transition: all .3s cubic-bezier(.645,.045,.355,1);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 
   &.small {
     padding: 9px 15px;

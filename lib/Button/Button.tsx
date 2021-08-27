@@ -10,12 +10,12 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = (props: ButtonProps): React.ReactElement => {
-  const { size = 'middle', disabled = false, children } = props;
+  const { size = 'middle', children, ...restProps } = props;
 
   const cls = classNames('__e-ui-btn', size);
 
   return (
-    <button disabled={disabled} className={cls}>
+    <button {...restProps} className={cls}>
       <span>{children}</span>
     </button>
   );

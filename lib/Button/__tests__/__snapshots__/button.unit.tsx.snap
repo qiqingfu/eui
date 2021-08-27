@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component Button renders correctly 1`] = `
+<button
+  className="__e-ui-btn middle"
+>
+  <span>
+    Button
+  </span>
+</button>
+`;
