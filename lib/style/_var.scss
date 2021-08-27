@@ -1,5 +1,13 @@
 $family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
   sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
+// class 类名前缀
+$e-prefix: '__e-ui';
+
 // 状态色
 $primay: #1890ff;
+
+$success: #52C41A;
+$danger: #ff4d4f;
+$warning: #FAAD14;
+$info: $primay;
