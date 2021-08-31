@@ -6,7 +6,12 @@ const App = (): React.ReactElement => {
   return (
     <>
       <div className="demo-container">
-        <Button size="small">Button</Button>
+        <Button size="small" loading disabled>
+          Button
+        </Button>
+        <Button size="small" loading>
+          Button
+        </Button>
       </div>
     </>
   );

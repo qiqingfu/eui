@@ -9,3 +9,4 @@
  */
 
 import './delete.svg';
+import './loading.svg';
