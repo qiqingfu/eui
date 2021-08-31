@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import classNames from 'classnames';
 import { Icon } from '../index';
 
@@ -15,11 +15,13 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps): React.ReactElement =
   const { size = 'middle', loading = false, children, ...restProps } = props;
   const { disabled } = restProps;
 
-  const cls = classNames('__e-ui-btn', size, { loading: 'loading' });
+  const isLoading = useMemo(() => loading && !disabled, [loading, disabled]);
+
+  const cls = classNames('__e-ui-btn', size, { loading: isLoading });
 
   return (
     <button {...restProps} className={cls}>
-      {loading && !disabled && <Icon name="loading" className="btn-icon" />}
+      {isLoading && <Icon name="loading" className="btn-icon" />}
       <span>{children}</span>
     </button>
   );

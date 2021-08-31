@@ -1,7 +1,7 @@
 .#{$e-prefix}-btn {
   display: inline-flex;
   background-color: $primay;
-  border: none;
+  border: solid 1px $primay;
   outline: none;
   color: #fff;
   font-size: 14px;
@@ -42,7 +42,7 @@
 
   &[disabled] {
     color: #00000040;
-    border: solid 1px #d9d9d9;
+    border-color: #d9d9d9;
     background-color: #f5f5f5;
     text-shadow: none;
     box-shadow: none;

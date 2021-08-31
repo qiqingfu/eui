@@ -41,4 +41,23 @@ describe('Button Component', () => {
     wrapper.setProps({ disabled: true });
     expect(wrapper.is('[disabled=true]')).toBeTruthy();
   });
+
+  describe('Button props.loading', () => {
+    it('set loading props', () => {
+      const wrapper = shallow(<Button>Loading Button</Button>);
+      wrapper.setProps({ loading: false });
+      expect(wrapper.hasClass('loading')).toBeFalsy();
+      wrapper.setProps({ loading: true });
+      expect(wrapper.hasClass('loading')).toBeTruthy();
+    });
+
+    it('set loading props and disabled props', () => {
+      const wrapper = shallow(<Button loading>Loading Button</Button>);
+      expect(wrapper.hasClass('loading')).toBeTruthy();
+      expect(wrapper.find('.btn-icon').exists()).toBeTruthy();
+      wrapper.setProps({ disabled: true });
+      expect(wrapper.hasClass('loading')).toBeFalsy();
+      expect(wrapper.find('.btn-icon').exists()).toBeFalsy();
+    });
+  });
 });
