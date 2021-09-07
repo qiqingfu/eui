@@ -1,4 +1,4 @@
-# 开发记录
+# 开发日志
 
 ## 2021.09.07
 
@@ -6,3 +6,14 @@
 - 一个必选的 visible props
 - 新增 onCancel props 关闭的回调函数。范围：取消按钮、遮罩层
 - 新增 maskClosable props，点击遮罩层是否关闭, 默认设置为 true
+- 进行 Modal 组件的 CSS 样式编写
+- 新增 props closable 属性，是否显示右上角关闭按钮
+- Footer 部分默认显示取消和确认按钮
+  - 点击取消按钮时, 触发 onCancel 函数
+  - 点击确认时, 触发 onOk 函数
+
+待优化：
+
+- BEM 布局方式
+- onCancel、onOk 代码待优化
+- 需要编写 Modal 已开发功能的单元测试
