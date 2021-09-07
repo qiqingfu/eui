@@ -1,0 +1,19 @@
+.#{$e-prefix}-modal {
+  position: relative;
+  z-index: 2;
+  width: 500px;
+  min-height: 200px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+}
+
+.#{$e-prefix}-modal-mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: #00000073;
+}

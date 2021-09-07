@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Icon } from '../index';
 
 export type ButtonSize = 'small' | 'middle' | 'large';
-interface ButtonProps {
+interface ButtonProps extends React.DOMAttributes<Element> {
   size?: ButtonSize;
   disabled?: boolean;
   loading?: boolean;
