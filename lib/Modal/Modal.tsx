@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon, Button } from '../index';
+import { Type } from '_util';
 
 export interface IProps {
   visible: boolean;
@@ -13,15 +14,13 @@ const Modal: React.FC<IProps> = (props: IProps) => {
   const { visible, maskClosable = true, closable = true, onCancel, onOk } = props;
 
   const cancelHandle = (e: React.MouseEvent) => {
-    // 待优化
-    if (onCancel && typeof onCancel === 'function') {
+    if (onCancel && Type.Function(onCancel)) {
       onCancel(e);
     }
   };
 
-  // 待优化 代码太多重复
   const okHandle = (e: React.MouseEvent) => {
-    if (onOk && typeof onOk === 'function') {
+    if (onOk && Type.Function(onOk)) {
       onOk(e);
     }
   };
