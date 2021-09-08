@@ -43,6 +43,9 @@ describe('Modal Component', () => {
   });
 
   it('Modal props.closable', () => {
-    // TODO
+    const wrapper = shallow(<Modal visible></Modal>);
+    expect(wrapper.find('.e-modal__close').exists()).toBeTruthy();
+    wrapper.setProps({ closable: false });
+    expect(wrapper.find('.e-modal__close').exists()).toBeFalsy();
   });
 });
