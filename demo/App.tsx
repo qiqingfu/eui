@@ -9,6 +9,10 @@ const App = (): React.ReactElement => {
     setVisible(!visible);
   };
 
+  const okHandle = () => {
+    console.log('ok');
+  };
+
   const modalCancel = () => {
     setVisible(false);
   };
@@ -22,7 +26,7 @@ const App = (): React.ReactElement => {
         <Button size="small" loading disabled>
           Button
         </Button>
-        <Modal visible={visible} onCancel={modalCancel}></Modal>
+        <Modal visible={visible} onCancel={modalCancel} onOk={okHandle}></Modal>
       </div>
     </>
   );

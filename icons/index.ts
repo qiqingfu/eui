@@ -10,3 +10,4 @@
 
 import './delete.svg';
 import './loading.svg';
+import './close.svg';
