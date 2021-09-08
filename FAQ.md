@@ -1,4 +1,4 @@
-## npx mrm lint-staged error
+# npx mrm lint-staged error
 
 当我在执行 prettier 这个 [lint-staged](https://prettier.io/docs/en/precommit.html#option-1-lint-stagedhttpsgithubcomokonetlint-staged) 步骤时，出现如下错误。
 
@@ -12,7 +12,7 @@ We’ve tried to load “mrm-preset-default” and “default” npm packages.
 
 参考：https://stackoverflow.com/questions/67475700/npx-mrm-lint-staged-erroring-out-with-preset-default-not-found
 
-## 通过 jest 运行指定的测试文件
+# 通过 jest 运行指定的测试文件
 
 ```text
 yarn test -- -u -t=<describe的描述名称>
@@ -24,7 +24,7 @@ yarn test -- -u -t=<describe的描述名称>
 yarn test -- -u -t="Button Component"
 ```
 
-## CSS BEM 规范
+# CSS BEM 规范
 
 参考链接：https://www.zhihu.com/question/21935157/answer/267931220
 
@@ -33,7 +33,7 @@ yarn test -- -u -t="Button Component"
 - 模块**子元素：.Block**Element
 - 模块**子元素\_状态：.Block**Element_Modifier
 
-## TsConfig.json path
+# TsConfig.json path
 
 - 在 TS 模块中使用绝对路径导入模块失败
 
@@ -53,5 +53,8 @@ resolve 'lib/_util/index' in 'E:\eui\lib\Modal'
  @ ./lib/index.tsx 3:0-28 4:0-31
  @ ./demo/App.tsx 3:0-45 17:32-38 18:32-38 19:32-37
  @ ./demo/index.tsx 4:0-24 5:36-39
-
 ```
+
+# toString.call(Generator) 在 JavaScript 和 TypeScript 下得到的结果不同?
+
+在我实现 Type 判断类型的工具函数时，在 TS 代码中使用 Object.prototype.toString.call(function \* gen() {}) 代码时, 期望得到 `[object GeneratorFunction]`，结果却得到 `[object Function]`，但是在 JavaScript 中没问题。
