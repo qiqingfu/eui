@@ -16,6 +16,8 @@
  *  - Date - new Date
  */
 
+import { TupleToUnion } from './type';
+
 type Types = [
   'Number',
   'String',
@@ -30,10 +32,6 @@ type Types = [
   'GeneratorFunction',
   'Date',
 ];
-
-export type TupleToUnion<T extends unknown[]> = T extends [infer A, ...infer B]
-  ? A | TupleToUnion<B>
-  : never;
 
 type Result = Record<TupleToUnion<Types>, (val: unknown) => boolean>;
 

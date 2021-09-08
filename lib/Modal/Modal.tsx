@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon, Button } from '../index';
-import { Type } from '_util';
+import { Type } from '../util/index';
 
 export interface IProps {
   visible: boolean;
