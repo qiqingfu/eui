@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "rootDirs": ["include"],
     "outDir": "dist",
     "module": "esnext",

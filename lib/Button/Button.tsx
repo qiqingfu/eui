@@ -17,11 +17,11 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps): React.ReactElement =
 
   const isLoading = useMemo(() => loading && !disabled, [loading, disabled]);
 
-  const cls = classNames('__e-ui-btn', size, { loading: isLoading });
+  const cls = classNames('e-btn', size, { 'e-btn_loading': isLoading });
 
   return (
     <button {...restProps} className={cls}>
-      {isLoading && <Icon name="loading" className="btn-icon" />}
+      {isLoading && <Icon name="loading" className="e-btn__icon" />}
       <span>{children}</span>
     </button>
   );

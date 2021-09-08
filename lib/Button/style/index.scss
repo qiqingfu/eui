@@ -26,13 +26,13 @@
     padding: 12px 20px;
   }
 
-  & > .btn-icon {
+  &__icon {
     margin-right: 2px;
     fill: #fff;
   }
 
-  &.loading {
-    & > .btn-icon {
+  &_loading {
+    .e-btn__icon {
       animation-name: spin;
       animation-duration: 5000ms;
       animation-iteration-count: infinite;

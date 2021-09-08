@@ -1,9 +1,6 @@
-## 需求分析
+# 开发日志
 
-### size
+## 2021/9/8
 
-- 支持三种程度的尺寸
-- 默认 middle
-- 大尺寸 large
-- 中等尺寸 middle
-- 小尺寸 small
+- 对 Button 组件的 CSS 样式优化为 BEM
+- 对 Jest 测试报错进行解决

@@ -23,3 +23,35 @@ yarn test -- -u -t=<describe的描述名称>
 ```text
 yarn test -- -u -t="Button Component"
 ```
+
+## CSS BEM 规范
+
+参考链接：https://www.zhihu.com/question/21935157/answer/267931220
+
+- 模块：.Block
+- 模块\_状态：.Block_Modifier
+- 模块**子元素：.Block**Element
+- 模块**子元素\_状态：.Block**Element_Modifier
+
+## TsConfig.json path
+
+- 在 TS 模块中使用绝对路径导入模块失败
+
+```json
+Module not found: Error: Can't resolve 'lib/_util/index' in 'E:\eui\lib\Modal'
+resolve 'lib/_util/index' in 'E:\eui\lib\Modal'
+  Parsed request is a module
+  using description file: E:\eui\package.json (relative path: ./lib/Modal)
+    Field 'browser' doesn't contain a valid alias configuration
+    resolve as module
+      E:\eui\lib\Modal\node_modules doesn't exist or is not a directory
+      E:\eui\lib\node_modules doesn't exist or is not a directory
+      looking for modules in E:\eui\node_modules
+        E:\eui\node_modules\lib doesn't exist
+      E:\node_modules doesn't exist or is not a directory
+ @ ./lib/Modal/index.tsx 1:0-28 2:15-20
+ @ ./lib/index.tsx 3:0-28 4:0-31
+ @ ./demo/App.tsx 3:0-45 17:32-38 18:32-38 19:32-37
+ @ ./demo/index.tsx 4:0-24 5:36-39
+
+```
