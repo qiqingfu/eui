@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal Component Modal renders correctly 1`] = `
+Array [
+  <div
+    className="e-modal__mask"
+    onClick={[Function]}
+  />,
+  <div
+    className="e-modal"
+  >
+    <div
+      className="e-modal__header"
+    >
+      Header
+      <span
+        className="e-modal__close"
+        onClick={[Function]}
+      >
+        <svg
+          className="e-ui-icon"
+          style={Object {}}
+        >
+          <use
+            xlinkHref="#close"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      className="e-modal__main"
+    >
+      Main
+    </div>
+    <div
+      className="e-modal__footer"
+    >
+      <button
+        className="e-btn small"
+        onClick={[Function]}
+      >
+        <span>
+          取消
+        </span>
+      </button>
+      <button
+        className="e-btn small"
+        onClick={[Function]}
+      >
+        <span>
+          确认
+        </span>
+      </button>
+    </div>
+  </div>,
+]
+`;
