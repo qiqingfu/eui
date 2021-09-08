@@ -23,3 +23,12 @@ yarn test -- -u -t=<describe的描述名称>
 ```text
 yarn test -- -u -t="Button Component"
 ```
+
+## CSS BEM 规范
+
+参考链接：https://www.zhihu.com/question/21935157/answer/267931220
+
+- 模块：.Block
+- 模块\_状态：.Block_Modifier
+- 模块**子元素：.Block**Element
+- 模块**子元素\_状态：.Block**Element_Modifier

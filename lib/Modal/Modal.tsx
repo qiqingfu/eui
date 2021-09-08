@@ -34,18 +34,18 @@ const Modal: React.FC<IProps> = (props: IProps) => {
 
   return visible ? (
     <>
-      <div className="__e-ui-modal-mask" onClick={maskClick}></div>
-      <div className="__e-ui-modal">
-        <div className="__e-ui-modal__header">
+      <div className="e-modal__mask" onClick={maskClick}></div>
+      <div className="e-modal">
+        <div className="e-modal__header">
           Header
           {closable && (
-            <span className="__e-ui-modal__close" onClick={cancelHandle}>
+            <span className="e-modal__close" onClick={cancelHandle}>
               <Icon name="close" />
             </span>
           )}
         </div>
-        <div className="__e-ui-modal__main">Main</div>
-        <div className="__e-ui-modal__footer">
+        <div className="e-modal__main">Main</div>
+        <div className="e-modal__footer">
           <Button size="small" onClick={cancelHandle}>
             取消
           </Button>

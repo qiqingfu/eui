@@ -1,6 +1,4 @@
-$modal: #{$e-prefix}-modal;
-
-.#{$modal} {
+.e-modal {
   @include pos-center;
   z-index: 2;
   width: 500px;
@@ -11,18 +9,17 @@ $modal: #{$e-prefix}-modal;
   &__header {
     padding: 16px 24px;
     border-bottom: solid 1px #f0f0f0;
+  }
 
-    // 待优化为 BEM 布局
-    @at-root .#{$modal}__close {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 56px;
-      height: 56px;
-      line-height: 56px;
-      text-align: center;
-      cursor: pointer;
-    }
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    cursor: pointer;
   }
 
   &__main {
@@ -36,14 +33,14 @@ $modal: #{$e-prefix}-modal;
     text-align: right;
     border-top: solid 1px #f0f0f0;
   }
-}
 
-.#{$e-prefix}-modal-mask {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: $z-mask;
-  background-color: #00000073;
+  &__mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z-mask;
+    background-color: #00000073;
+  }
 }

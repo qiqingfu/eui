@@ -2,7 +2,7 @@
 
 exports[`Button Component Button renders correctly 1`] = `
 <button
-  className="__e-ui-btn middle"
+  className="e-btn middle"
 >
   <span>
     Button
