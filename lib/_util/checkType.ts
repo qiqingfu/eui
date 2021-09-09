@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * 基本数据类型
  *  - Number
@@ -30,6 +29,8 @@ type Types = [
   'Array',
   'Function',
   'Promise',
+  'Map',
+  'Set',
   'Date',
 ];
 
@@ -49,6 +50,8 @@ const Type = (() => {
     'Array',
     'Function',
     'Promise',
+    'Map',
+    'Set',
     'Date',
   ];
 
@@ -56,8 +59,8 @@ const Type = (() => {
 
   for (let i = 0; i < types.length; i++) {
     const type = types[i];
-    result[type] = (val: any) => {
-      const [, valType] = toString.call(val).match(/^\[object\s+(\w+)]$/);
+    result[type] = (val: unknown) => {
+      const [, valType] = toString.call(val).match(/^\[\w+\s+(\w+)\]$/);
       return valType === type;
     };
   }

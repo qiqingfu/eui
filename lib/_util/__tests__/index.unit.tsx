@@ -43,6 +43,16 @@ describe('Type', () => {
     expect(Type.Promise(promise)).toBeTruthy();
   });
 
+  it('Check Map type', () => {
+    const map = new Map();
+    expect(Type.Map(map)).toBeTruthy();
+  });
+
+  it('Check Set type', () => {
+    const set = new Set();
+    expect(Type.Set(set)).toBeTruthy();
+  });
+
   it('Check Date type', () => {
     const date = new Date();
     expect(Type.Date(date)).toBeTruthy();
