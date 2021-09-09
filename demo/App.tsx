@@ -23,7 +23,7 @@ const App = (): React.ReactElement => {
         <Button size="small" onClick={handleClick}>
           Show Modal
         </Button>
-        <Button size="small" loading disabled>
+        <Button size="small" type="primary">
           Button
         </Button>
         <Modal visible={visible} onCancel={modalCancel} onOk={okHandle}></Modal>

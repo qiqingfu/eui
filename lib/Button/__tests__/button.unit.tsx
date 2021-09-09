@@ -21,7 +21,7 @@ describe('Button Component', () => {
     it('Default size middle', () => {
       const wrapper = shallow(<Button>Button</Button>);
 
-      expect(wrapper.hasClass('middle')).toBeTruthy();
+      expect(wrapper.hasClass('e-btn_middle')).toBeTruthy();
     });
 
     it('Set the value of props.size to small ', () => {
@@ -29,7 +29,7 @@ describe('Button Component', () => {
       const wrapper = shallow(<Button>Button</Button>);
 
       wrapper.setProps({ size });
-      expect(wrapper.hasClass(size)).toBeTruthy();
+      expect(wrapper.hasClass(`e-btn_${size}`)).toBeTruthy();
     });
   });
 

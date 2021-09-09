@@ -4,9 +4,11 @@ $family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue'
 // class 类名前缀
 $e-prefix: 'e';
 
-// 状态色
-$primay: #1890ff;
+// 对 CSS 状态色进行变量抽取, 形成统一的风格
+$white: #ffffff;
 
+$default: #ffffff;
+$primay: #1890ff;
 $success: #52c41a;
 $danger: #ff4d4f;
 $warning: #faad14;

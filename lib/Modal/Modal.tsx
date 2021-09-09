@@ -48,7 +48,7 @@ const Modal: React.FC<IProps> = (props: IProps) => {
           <Button size="small" onClick={cancelHandle}>
             取消
           </Button>
-          <Button size="small" onClick={okHandle}>
+          <Button size="small" type="primary" onClick={okHandle}>
             确认
           </Button>
         </div>

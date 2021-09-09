@@ -36,7 +36,7 @@ Array [
       className="e-modal__footer"
     >
       <button
-        className="e-btn small"
+        className="e-btn e-btn_small e-btn_default"
         onClick={[Function]}
       >
         <span>
@@ -44,7 +44,7 @@ Array [
         </span>
       </button>
       <button
-        className="e-btn small"
+        className="e-btn e-btn_small e-btn_primary"
         onClick={[Function]}
       >
         <span>

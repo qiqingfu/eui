@@ -1,9 +1,7 @@
 .#{$e-prefix}-btn {
   display: inline-flex;
-  background-color: $primay;
-  border: solid 1px $primay;
+  border: solid 1px transparent;
   outline: none;
-  color: #fff;
   font-size: 14px;
   cursor: pointer;
   border-radius: 4px;
@@ -13,16 +11,16 @@
     margin-left: 10px;
   }
 
-  &.small {
+  &_small {
     padding: 9px 15px;
     border-radius: 3px;
   }
 
-  &.middle {
+  &_middle {
     padding: 10px 20px;
   }
 
-  &.large {
+  &_large {
     padding: 12px 20px;
   }
 
@@ -40,6 +38,27 @@
     }
   }
 
+  &_default {
+    background-color: #ffffff;
+    color: #606266;
+    border-color: #dcdfe6;
+
+    &:not([disabled]):hover {
+      color: #40a9ff;
+      border-color: #40a9ff;
+    }
+  }
+
+  &_primary {
+    background-color: #1890ff;
+    color: #ffffff;
+
+    &:not([disabled]):hover {
+      background-color: #40a9ff;
+      border-color: #40a9ff;
+    }
+  }
+
   &[disabled] {
     color: #00000040;
     border-color: #d9d9d9;
@@ -47,11 +66,6 @@
     text-shadow: none;
     box-shadow: none;
     cursor: not-allowed;
-  }
-
-  &:not([disabled]):hover {
-    background-color: #40a9ff;
-    border-color: #40a9ff;
   }
 }
 
