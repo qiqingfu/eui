@@ -26,7 +26,8 @@ const App = (): React.ReactElement => {
         <Button size="small" type="primary">
           Button
         </Button>
-        <Modal visible={visible} onCancel={modalCancel} onOk={okHandle}></Modal>
+        <p className="z-index">zIndex 10</p>
+        <Modal visible={visible} onCancel={modalCancel} onOk={okHandle} />
       </div>
     </>
   );

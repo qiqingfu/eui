@@ -20,3 +20,16 @@
   - 计划将其抽成一个 npm 包工具
 - 创建 **tests** 单元测试目录
 - 需要编写 Modal 已开发功能的单元测试
+
+## 2021/09/12
+
+- mask 是否显示遮罩层
+- 支持自定义 footer
+
+## 待完成
+
+- props.footer 测试用例编写
+- 处理 zIndex 层级问题, 通过 ReactDOM.createPortal() 解决。
+- 提供 API 调用的方式
+  - alert
+  - confirm

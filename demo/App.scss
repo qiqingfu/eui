@@ -1,3 +1,11 @@
 .demo-container {
   padding: 40px 60px;
 }
+
+.z-index {
+  padding: 20px;
+  position: relative;
+  z-index: 10;
+  border: solid 1px red;
+  background: red;
+}

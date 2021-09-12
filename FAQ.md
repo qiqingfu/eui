@@ -58,3 +58,9 @@ resolve 'lib/_util/index' in 'E:\eui\lib\Modal'
 # toString.call(Generator) 在 JavaScript 和 TypeScript 下得到的结果不同?
 
 在我实现 Type 判断类型的工具函数时，在 TS 代码中使用 Object.prototype.toString.call(function \* gen() {}) 代码时, 期望得到 `[object GeneratorFunction]`，结果却得到 `[object Function]`，但是在 JavaScript 中没问题。
+
+## Enzyme shallow 和 mount 的区别
+
+- shallow 浅层渲染组件，不会渲染当前组件中的子组件，所以不能再该组件中给子组件绑定事件
+
+- mount 完整的渲染组件，包括该组件中使用的子组件，因此可以测试子组件的事件绑定

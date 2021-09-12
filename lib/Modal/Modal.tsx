@@ -1,6 +1,6 @@
 import React from 'react';
-import { Icon, Button } from '../index';
-import { Type } from '../_util/index';
+import { Icon } from '../index';
+import { useEvent, useFooter } from './hooks';
 
 export interface IProps {
   visible: boolean;
@@ -8,22 +8,23 @@ export interface IProps {
   onOk?: React.MouseEventHandler;
   maskClosable?: boolean;
   closable?: boolean;
+  mask?: boolean;
+  footer?: React.ReactNode[] | null;
 }
 
 const Modal: React.FC<IProps> = (props: IProps) => {
-  const { visible, maskClosable = true, closable = true, onCancel, onOk } = props;
+  const {
+    visible,
+    maskClosable = true,
+    closable = true,
+    mask = true,
+    onCancel,
+    onOk,
+    footer,
+  } = props;
 
-  const cancelHandle = (e: React.MouseEvent) => {
-    if (onCancel && Type.Function(onCancel)) {
-      onCancel(e);
-    }
-  };
-
-  const okHandle = (e: React.MouseEvent) => {
-    if (onOk && Type.Function(onOk)) {
-      onOk(e);
-    }
-  };
+  const { okHandle, cancelHandle } = useEvent(onOk, onCancel);
+  const { footerNode } = useFooter({ okHandle, cancelHandle, footer });
 
   const maskClick = (e: React.MouseEvent) => {
     if (maskClosable) {
@@ -33,7 +34,7 @@ const Modal: React.FC<IProps> = (props: IProps) => {
 
   return visible ? (
     <>
-      <div className="e-modal__mask" onClick={maskClick}></div>
+      {mask && <div className="e-modal__mask" onClick={maskClick} />}
       <div className="e-modal">
         <div className="e-modal__header">
           Header
@@ -44,14 +45,7 @@ const Modal: React.FC<IProps> = (props: IProps) => {
           )}
         </div>
         <div className="e-modal__main">Main</div>
-        <div className="e-modal__footer">
-          <Button size="small" onClick={cancelHandle}>
-            取消
-          </Button>
-          <Button size="small" type="primary" onClick={okHandle}>
-            确认
-          </Button>
-        </div>
+        {footerNode}
       </div>
     </>
   ) : null;
