@@ -78,5 +78,12 @@ describe('Modal Component', () => {
         wrapper.find('.e-modal__footer').find('.e-modal__custom-button').exists(),
       ).toBeTruthy();
     });
+
+    it('Modal props.zIndex', () => {
+      const zIndexValue = 1001;
+      const wrapper = mount(<Modal visible zIndex={zIndexValue} />);
+      const style = wrapper.find('.e-modal__mask').get(0).props.style;
+      expect(style.zIndex).toBe(zIndexValue);
+    });
   });
 });

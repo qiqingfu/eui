@@ -64,3 +64,13 @@ resolve 'lib/_util/index' in 'E:\eui\lib\Modal'
 - shallow 浅层渲染组件，不会渲染当前组件中的子组件，所以不能再该组件中给子组件绑定事件
 
 - mount 完整的渲染组件，包括该组件中使用的子组件，因此可以测试子组件的事件绑定
+
+## TypeError: parentInstance.children.indexOf is not a function
+
+问题描述：
+
+当编写 Modal 组件时，使用 ReactDOM.createPortal 将 Node 传送到别的位置时，在编写 Modal 组件的 Jest 快照时就会报以上错误。
+
+目前通过谷歌找到一个相关问题的 issues，https://github.com/reactjs/react-modal/issues/553。等解决这个问题后再更新这块的描述。
+
+**占空**

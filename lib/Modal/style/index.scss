@@ -1,6 +1,6 @@
 .e-modal {
   @include pos-center;
-  z-index: 2;
+  z-index: $z-mask;
   width: 500px;
   background-color: #fff;
   border-radius: 2px;

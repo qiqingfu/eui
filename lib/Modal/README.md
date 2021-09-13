@@ -26,10 +26,15 @@
 - mask 是否显示遮罩层
 - 支持自定义 footer
 
-## 待完成
+## 2021/09/13
 
 - props.footer 测试用例编写
-- 处理 zIndex 层级问题, 通过 ReactDOM.createPortal() 解决。
+- 处理 zIndex 层级问题, 通过 ReactDOM.createPortal() 解决
+- 支持用户自定义 zIndex
+
+## 待完成
+
+- Modal 生成快照报错处理
 - 提供 API 调用的方式
   - alert
   - confirm

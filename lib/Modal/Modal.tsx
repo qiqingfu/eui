@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Icon } from '../index';
 import { useEvent, useFooter } from './hooks';
 
@@ -10,6 +11,7 @@ export interface IProps {
   closable?: boolean;
   mask?: boolean;
   footer?: React.ReactNode[] | null;
+  zIndex?: number;
 }
 
 const Modal: React.FC<IProps> = (props: IProps) => {
@@ -21,6 +23,7 @@ const Modal: React.FC<IProps> = (props: IProps) => {
     onCancel,
     onOk,
     footer,
+    zIndex,
   } = props;
 
   const { okHandle, cancelHandle } = useEvent(onOk, onCancel);
@@ -32,23 +35,28 @@ const Modal: React.FC<IProps> = (props: IProps) => {
     }
   };
 
-  return visible ? (
-    <>
-      {mask && <div className="e-modal__mask" onClick={maskClick} />}
-      <div className="e-modal">
-        <div className="e-modal__header">
-          Header
-          {closable && (
-            <span className="e-modal__close" onClick={cancelHandle}>
-              <Icon name="close" />
-            </span>
-          )}
+  const style = { zIndex };
+
+  return ReactDOM.createPortal(
+    visible ? (
+      <>
+        {mask && <div className="e-modal__mask" style={style} onClick={maskClick} />}
+        <div className="e-modal" style={style}>
+          <div className="e-modal__header">
+            Header
+            {closable && (
+              <span className="e-modal__close" onClick={cancelHandle}>
+                <Icon name="close" />
+              </span>
+            )}
+          </div>
+          <div className="e-modal__main">Main</div>
+          {footerNode}
         </div>
-        <div className="e-modal__main">Main</div>
-        {footerNode}
-      </div>
-    </>
-  ) : null;
+      </>
+    ) : null,
+    document.body,
+  );
 };
 
 export default Modal;
