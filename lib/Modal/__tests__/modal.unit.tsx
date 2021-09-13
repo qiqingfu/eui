@@ -55,4 +55,28 @@ describe('Modal Component', () => {
     wrapper.setProps({ mask: false });
     expect(wrapper.find('.e-modal__mask').exists()).toBeFalsy();
   });
+
+  describe('Modal props.footer', () => {
+    it('set footer to null', () => {
+      const wrapper = mount(<Modal visible footer={null} />);
+      expect(wrapper.find('.e-modal__footer').exists()).toBeFalsy();
+    });
+
+    it('set footer as a custom button', () => {
+      const wrapper = mount(
+        <Modal
+          visible
+          footer={[
+            <button key="1" className="e-modal__custom-button">
+              ok
+            </button>,
+          ]}
+        />,
+      );
+
+      expect(
+        wrapper.find('.e-modal__footer').find('.e-modal__custom-button').exists(),
+      ).toBeTruthy();
+    });
+  });
 });
