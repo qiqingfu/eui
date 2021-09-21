@@ -1,11 +1,10 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import renderer from 'react-test-renderer';
 import Modal from '../index';
 
 describe('Modal Component', () => {
   it('Modal renders correctly', () => {
-    const tree = renderer.create(<Modal visible />);
+    const tree = mount(<Modal visible />);
     expect(tree).toMatchSnapshot();
   });
 
@@ -84,6 +83,29 @@ describe('Modal Component', () => {
       const wrapper = mount(<Modal visible zIndex={zIndexValue} />);
       const style = wrapper.find('.e-modal__mask').get(0).props.style;
       expect(style.zIndex).toBe(zIndexValue);
+    });
+  });
+
+  it('Modal children', () => {
+    const value = 'Content';
+    const wrapper = mount(<Modal visible>{value}</Modal>);
+    expect(wrapper.find('.e-modal__main').text()).toBe(value);
+  });
+
+  describe('Modal Header', () => {
+    it('props.title', () => {
+      const value = '自定义标题';
+      const wrapper = mount(<Modal visible />);
+      expect(wrapper.find('.e-modal__title').text()).toBe('Header');
+      wrapper.setProps({ title: value });
+      expect(wrapper.find('.e-modal__title').text()).toBe(value);
+    });
+
+    it('props.showHeader', () => {
+      const wrapper = mount(<Modal visible />);
+      expect(wrapper.find('.e-modal__header').exists()).toBeTruthy();
+      wrapper.setProps({ showHeader: false });
+      expect(wrapper.find('.e-modal__header').exists()).toBeFalsy();
     });
   });
 });

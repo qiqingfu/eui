@@ -17,17 +17,23 @@ const App = (): React.ReactElement => {
     setVisible(false);
   };
 
+  const clickHandle = () => {
+    Modal.confirm();
+  };
+
   return (
     <>
       <div className="demo-container">
         <Button size="small" onClick={handleClick}>
           Show Modal
         </Button>
-        <Button size="small" type="primary">
+        <Button size="small" type="primary" onClick={clickHandle}>
           Button
         </Button>
         <p className="z-index">zIndex 10</p>
-        <Modal visible={visible} onCancel={modalCancel} onOk={okHandle} />
+        <Modal visible={visible} onCancel={modalCancel} onOk={okHandle}>
+          Content
+        </Modal>
       </div>
     </>
   );

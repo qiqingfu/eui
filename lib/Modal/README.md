@@ -32,6 +32,11 @@
 - 处理 zIndex 层级问题, 通过 ReactDOM.createPortal() 解决
 - 支持用户自定义 zIndex
 
+## 2021/09/21
+
+- Modal 生成快照错误处理
+- 支持 title props 自定义 Modal 的标题内容
+
 ## 待完成
 
 - Modal 生成快照报错处理
