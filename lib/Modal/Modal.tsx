@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { Icon } from '../index';
 import { useEvent, useFooter } from './hooks';
@@ -17,15 +17,22 @@ export interface IProps {
   children?: React.ReactNode | undefined;
 }
 
-interface IPromsWithMethod {
+/**
+ * 通过 API 调用 Modal 时需要传递的参数类型
+ */
+interface IPropsWithMethod extends Pick<IProps, 'onCancel' | 'onOk'> {
   content: string;
 }
 
-interface IMethods<T> {
-  confirm: (props: T) => void;
+interface IConfirmReturn {
+  close: () => void;
 }
 
-const Modal: React.FC<IProps> & IMethods<IPromsWithMethod> = (props: IProps) => {
+interface IMethods<T> {
+  confirm: (props: T) => IConfirmReturn;
+}
+
+const Modal: React.FC<IProps> & IMethods<IPropsWithMethod> = (props: IProps) => {
   const {
     visible,
     maskClosable = true,
@@ -81,9 +88,30 @@ const Modal: React.FC<IProps> & IMethods<IPromsWithMethod> = (props: IProps) => 
 Modal.confirm = function (props) {
   const rootModal = document.createElement('div');
   document.body.appendChild(rootModal);
+  let visible = true;
 
-  ReactDOM.render(React.cloneElement(<Modal visible />), rootModal);
-  console.log(props);
+  const { content, onOk, onCancel } = props;
+
+  function render() {
+    ReactDOM.render(
+      React.cloneElement(
+        <Modal visible={visible} onOk={onOk} onCancel={onCancel}>
+          {content}
+        </Modal>,
+      ),
+      rootModal,
+    );
+  }
+
+  render();
+
+  return {
+    close() {
+      visible = false;
+      rootModal.remove();
+      render();
+    },
+  };
 };
 
 export default Modal;

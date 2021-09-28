@@ -18,7 +18,16 @@ const App = (): React.ReactElement => {
   };
 
   const clickHandle = () => {
-    Modal.confirm();
+    const modal = Modal.confirm({
+      content: 'Hello,World',
+      onCancel() {
+        console.log('cancel');
+        modal.close();
+      },
+      onOk() {
+        console.log('ok');
+      },
+    });
   };
 
   return (
